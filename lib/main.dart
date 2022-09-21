@@ -14,8 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
+        useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -69,7 +71,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.greenAccent,
         title: Text(widget.title),
+        centerTitle: true,
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: FirebaseFirestore.instance.collection("MyTodos").snapshots(),
@@ -118,6 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
         },
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.greenAccent,
         onPressed: () {
           showDialog(
               context: context,
@@ -126,6 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
                   title: const Text("Add Todo"),
+                  backgroundColor: Colors.greenAccent,
                   content: Container(
                     width: 400,
                     height: 100,
