@@ -56,6 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
         .whenComplete(() => print("Data stored successfully"));
   }
 
+
   deleteTodo(item) {
 
     DocumentReference documentReference =
